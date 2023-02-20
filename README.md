@@ -8,7 +8,9 @@
 
 ## Demo API endpoints:
 
-- [GitHub API](https://docs.github.com/en/rest/overview/about-githubs-apis) (Note: in order to call above API, it needs your (GitHub personal access token with read access first)[https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token])
+- [GitHub API](https://docs.github.com/en/rest/overview/about-githubs-apis).
+
+- In order to call above API, it needs your [GitHub personal access token with read access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
 ## CRA and ESLint/Prettier Installation Step:
 
