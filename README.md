@@ -1,41 +1,56 @@
 # react ecosystem boilerplate
 
 ## Demo packages
+
 - [Create React App](https://github.com/facebook/create-react-app)
 - [React Router (v6)](https://reactrouter.com/en/main/start/overview)
 - [React Query (v4)](https://tanstack.com/query/latest/docs/react/overview)
 
 ## Demo API endpoints:
-- [GitHub API](https://docs.github.com/en/rest/overview/about-githubs-apis)
 
-**Note: in order to call above API, it needs your (GitHub personal access token with read access first)[https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token]**
-
+- [GitHub API](https://docs.github.com/en/rest/overview/about-githubs-apis) (Note: in order to call above API, it needs your (GitHub personal access token with read access first)[https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token])
 
 ## CRA and ESLint/Prettier Installation Step:
+
 1. Install VSCode extension [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-2. `npx create-react-app my-app --template typescript` [Ref here](https://create-react-app.dev/docs/getting-started#creating-a-typescript-app)
-3. `npm init @eslint/config`, select “To check syntax and find problems” and finish all steps. It will finally generate `.eslintrc` file [Ref here](https://levelup.gitconnected.com/configure-eslint-and-prettier-for-your-react-project-like-a-pro-2022-10287986a1b6)
-4. `npm i -D prettier eslint-config-prettier eslint-plugin-prettier`
-5. Update `.eslintrc` content: `"extends"` and `"plugins"` need to be add with `"prettier"`. `"prettier/prettier": ["error"]` is for indicating the red wavy underline of code
+
+2. Install [Create-React-App](https://create-react-app.dev/docs/getting-started#creating-a-typescript-app)
+
+```
+npx create-react-app my-app --template typescript
+```
+
+3. Create a [standard .eslintrc](https://levelup.gitconnected.com/configure-eslint-and-prettier-for-your-react-project-like-a-pro-2022-10287986a1b6): select “To check syntax and find problems” and finish all steps. It will finally generate `.eslintrc` file.
+
+```
+npm init @eslint/config
+```
+
+4.  Install `prettier` and some relevant stuff [explained here](https://prettier.io/docs/en/install.html#eslint-and-other-linters)
+
+```
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+```
+
+5. Update `.eslintrc` content: `"extends"` and `"plugins"` need to be add with `"prettier"`. `"prettier/prettier": ["error"]` is for indicating the red wavy underline of code.
+
 ```json
 {
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
-    ],
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "prettier"
-    ],
-    "rules": {
-        "prettier/prettier": ["error"]
-    }
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
+  }
 }
 ```
+
 6. Copy `.eslintrc` content and delete `.eslintrc`. Paste the content into `package.json` under `"eslintConfig"`.
+
 ```json
 {
   "eslintConfig": {
@@ -55,36 +70,34 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
-    "plugins": [
-      "react",
-      "@typescript-eslint",
-      "prettier"
-    ],
+    "plugins": ["react", "@typescript-eslint", "prettier"],
     "rules": {
-      "prettier/prettier": [
-        "error"
-      ]
+      "prettier/prettier": ["error"]
     }
   }
 }
 ```
+
 7. Add `package.json` npm script and test if it works as expected
+
 ```json
 {
   "scripts": {
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "format": "prettier --write src/**/*.ts{,x}"
-  },
+  }
 }
 ```
+
 8. Add `.vscode/settings.json`
+
 ```json
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false
+    "source.fixAll.eslint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": false
+  "editor.formatOnSave": true
 }
 ```
 
@@ -132,4 +145,3 @@ Check lint
 ### `npm run format`
 
 Adjust format and save
-
