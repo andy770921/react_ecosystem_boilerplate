@@ -8,15 +8,15 @@
 
 ## Demo API endpoints:
 
-- [GitHub API](https://docs.github.com/en/rest/overview/about-githubs-apis).
+- [GitHub API](https://docs.github.com/en/rest/overview/about-githubs-apis)
 
-- In order to call above API, it needs your [GitHub personal access token with read access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- In order to call above API, it needs your [GitHub personal access token with read access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
 
 ## CRA and ESLint/Prettier Installation Step:
 
-1. Install VSCode extension [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+1. Install VSCode extension [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
 
-2. Install [Create-React-App](https://create-react-app.dev/docs/getting-started#creating-a-typescript-app)
+2. Install [Create-React-App](https://create-react-app.dev/docs/getting-started#creating-a-typescript-app).
 
 ```
 npx create-react-app my-app --template typescript
@@ -28,7 +28,7 @@ npx create-react-app my-app --template typescript
 npm init @eslint/config
 ```
 
-4.  Install `prettier` and some relevant stuff [explained here](https://prettier.io/docs/en/install.html#eslint-and-other-linters)
+4.  Install `prettier` and some relevant stuff [explained here](https://prettier.io/docs/en/install.html#eslint-and-other-linters).
 
 ```
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
@@ -80,7 +80,7 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-7. Add `package.json` npm script and test if it works as expected
+7. Add `package.json` npm script and test if it works as expected.
 
 ```json
 {
@@ -91,7 +91,7 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-8. Add `.vscode/settings.json`
+8. Add `.vscode/settings.json`.
 
 ```json
 {
@@ -142,8 +142,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### `npm run lint`
 
-Check lint
+Check lint.
 
 ### `npm run format`
 
-Adjust format and save
+Adjust format and save.
