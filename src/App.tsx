@@ -24,7 +24,12 @@ const fetchApi = async <TResponseData = void, TError = unknown, TRequest = Reque
   headers,
 }: FetchApiParams<TRequest>) => {
   try {
-    const response = await fetch(resourceUrl, {
+    const url = new URL(
+      resourceUrl.startsWith('/') ? `.${resourceUrl}` : `./${resourceUrl}`,
+      BASE_API_URL,
+    );
+
+    const response = await fetch(url.toString(), {
       method,
       headers: {
         Accept: 'application/json',
@@ -97,8 +102,7 @@ const queryClientConfig: DefaultOptions = {
     retry: false,
     queryFn: async ({ queryKey }) => {
       if (ensureStringifyQueryKey(queryKey)) {
-        const url = new URL(`./${queryKey.join('/')}`, BASE_API_URL);
-        return defaultQueryFn(url.toString());
+        return defaultQueryFn(queryKey.join('/'));
       }
       throw new Error('Invalid QueryKey');
     },
