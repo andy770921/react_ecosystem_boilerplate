@@ -34,7 +34,20 @@ npm init @eslint/config
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
-5. Update `.eslintrc` content: `"extends"` and `"plugins"` need to be add with `"prettier"`. `"prettier/prettier": ["error"]` is for indicating the red wavy underline of code.
+5. Create `.prettierrc`.
+
+```json
+{
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": true
+}
+```
+
+6. Update `.eslintrc` content: `"extends"` and `"plugins"` need to be add with `"prettier"`. `"prettier/prettier": ["error"]` is for indicating the red wavy underline of code.
 
 ```json
 {
@@ -51,7 +64,7 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-6. Copy `.eslintrc` content and delete `.eslintrc`. Paste the content into `package.json` under `"eslintConfig"`.
+7. Copy `.eslintrc` content and delete `.eslintrc`. Paste the content into `package.json` under `"eslintConfig"`.
 
 ```json
 {
@@ -80,7 +93,7 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-7. Add `package.json` npm script and test if it works as expected.
+8. Add `package.json` npm script and test if it works as expected.
 
 ```json
 {
@@ -91,7 +104,7 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 }
 ```
 
-8. Add `.vscode/settings.json`.
+9. Add `.vscode/settings.json`.
 
 ```json
 {
