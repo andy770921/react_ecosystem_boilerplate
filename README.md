@@ -3,8 +3,8 @@
 ## Demo packages
 
 - [Create React App](https://github.com/facebook/create-react-app)
-- [React Router (v6)](https://reactrouter.com/en/main/start/overview)
-- [React Query (v4)](https://tanstack.com/query/latest/docs/react/overview)
+- [React Router (react-router-dom v6)](https://reactrouter.com/en/main/start/overview)
+- [React Query (@tanstack/react-query v4)](https://tanstack.com/query/latest/docs/react/overview)
 
 ## Demo API endpoints:
 
