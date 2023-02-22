@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 
 const Index = () => {
-  const { data: productData } = useQuery<{ data: { title: string }[] }>(['products', 'all']);
+  const { data: repoData } = useQuery<{ id: number; name: string }[]>(['user/repos']);
 
   return (
     <div>
@@ -12,8 +12,8 @@ const Index = () => {
       </div>
       <h1>home page</h1>
       <ul>
-        {productData?.data.map(({ title }, idx) => (
-          <li key={title + idx}>{title}</li>
+        {repoData?.map(({ id, name }) => (
+          <li key={id}>{name}</li>
         ))}
       </ul>
     </div>

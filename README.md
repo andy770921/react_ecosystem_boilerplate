@@ -8,9 +8,15 @@
 
 ## Demo API endpoints:
 
-- [GitHub API](https://docs.github.com/en/rest/overview/about-githubs-apis)
+- [GitHub API](https://docs.github.com/en/rest/repos/repos)
 
 - In order to call above API, it needs your [GitHub personal access token with read access](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+- Update `.env` with your personal access GitHub token
+
+```
+REACT_APP_GITHUB_TOKEN=github_pat_xxx
+```
 
 ## CRA and ESLint/Prettier Installation Step:
 

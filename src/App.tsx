@@ -6,7 +6,7 @@ import ContactPage from './pages/Contact';
 
 /** React Query Settings */
 
-const BASE_API_URL = 'https://api.appworks-school.tw/api/1.0/';
+const BASE_API_URL = 'https://api.github.com/';
 
 type RequestPayload = Record<string, unknown> | FormData | Blob;
 
@@ -36,7 +36,6 @@ const fetchApi = async <TResponseData = void, TError = unknown, TRequest = Reque
         ...(body instanceof FormData ? {} : { 'Content-Type': 'application/json' }),
         ...headers,
       },
-      //   credentials: 'include',
       ...(body ? { body: JSON.stringify(body) } : {}),
     });
     const data = await response.json();
@@ -57,6 +56,10 @@ const defaultQueryFn = async <TResponseData = void, TError = unknown>(
     const responseData = await fetchApi<TResponseData, TError>({
       resourceUrl: url,
       method: 'GET',
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+      },
       ...(options ?? {}),
     });
 
@@ -78,6 +81,10 @@ export const defaultMutationFn = async <
     const responseData = await fetchApi<TResponseData, TError, TRequest>({
       resourceUrl: url,
       method: 'POST',
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+      },
       ...(options ?? {}),
     });
 
