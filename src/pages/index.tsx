@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 
-const Index = () => {
+const Index: FC = () => {
   const { data: repoData } = useQuery<{ id: number; name: string }[]>(['user/repos']);
 
   return (
